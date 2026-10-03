@@ -150,7 +150,7 @@
 - **\~\~中文书**：《~~\[~~AI Agent开发实战：从基础原理到企业级应用~~\](~~[~~https://weread.qq.com/web/reader/41232030813abb05bg019c0c)\</span\>~~](https://weread.qq.com/web/reader/41232030813abb05bg019c0c)\</span\>)》郑天民，机械工业出版社 2025-09（智能系统与技术丛书，ISBN 9787111788737），第 1–2 章：Agent 核心概念、开发模式、用 LLM 与 Swarm 框架搭第一个 agent\~\~
     - [x] 第1章 AI Agent开发模式
     - [x] 第2章 LLM和Agent
-- **动手主线**：《AI Agents: The Definitive Guide — Design, Deployment, and Evaluation for Production》Nicole Koenigstein，O'Reilly（ISBN 9798341666931）。**本阶段真正照着敲的那本**：从设计到部署到评估，跟着配套 GitHub 代码走一遍。英文，但框架是当前在用的。O'Reilly 2026-09 第一版，全书 12 章、无附录。**P0 先读第 1–2 章，其余随 P1 展开。**中文：暂无中文版。
+- **动手主线**：《[AI Agents: The Definitive Guide — Design, Deployment, and Evaluation for Production](https://github.com/miracle-huang/Learn-Agentic-AI-LLM/tree/main/ai-agents-the-definitive-guide)》Nicole Koenigstein，O'Reilly（ISBN 9798341666931）。**本阶段真正照着敲的那本**：从设计到部署到评估，跟着配套 GitHub 代码走一遍。英文，但框架是当前在用的。O'Reilly 2026-09 第一版，全书 12 章、无附录。**P0 先读第 1–2 章，其余随 P1 展开。**中文：暂无中文版。
     - [对应GitHub代码](https://github.com/Nicolepcx/ai-agents-the-definitive-guide)
     - [x] 第 1 章 From LLMs to Agents: The Foundational Blueprint（从 LLM 到 Agent：用有限与分层状态机打控制流的地基）
     - [ ] 第 2 章 Architectures and Patterns: Planning, Reactivity, and Multi-Agent Systems（架构与模式：结构化推理、反思、human-in-the-loop、分层与群体）
