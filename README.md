@@ -1,6 +1,6 @@
 # 🧭 Agentic AI&LLM：Kaggle
 
-> **Agent 优先的转职路线（v2.4）** — 主线：AI Agent Engineer → LLM Engineer。投入 20h/周，总计约 44–52 周；用时为相对周期，不锚定日期。第 3 个月（P1 结束）起即可开始投简历。算力：无本地 GPU，P0–P3 基本只花 API token，P4 才需租卡。目标市场：中国 + 日本；技术写作英文主稿 + 中/日文版。
+> **Agent 优先的转职路线（v2.5）** — 主线：AI Agent Engineer → LLM Engineer。投入 20h/周，总计约 44–52 周；用时为相对周期，不锚定日期。第 3 个月（P1 结束）起即可开始投简历。算力：无本地 GPU，P0–P3 基本只花 API token，P4 才需租卡。目标市场：中国 + 日本；技术写作英文主稿 + 中/日文版。
 >
 > [网页版（同一份内容，可对照）](https://claude.ai/artifact/7E12f1Jo4g6fpZw6Yyxvm2)
 
@@ -112,19 +112,19 @@
 | Deep Dive into LLMs like ChatGPT | Karpathy，YouTube 2025-02 | B 站中英精校 | P0 原理 |
 | 生成式人工智慧導論 | 李宏毅，台大 2025 秋 / 2026 春 | 中文原生 | P0、P4 |
 | Hugging Face AI Agents Course | Hugging Face，免费 | — | P0–P2 |
+| AI Agents for Beginners（18 课） | Microsoft，GitHub 开源 | 官方简中版（机器翻译） | P0–P4 按课拆分 |
 | Agentic AI MOOC（CS294-196） | UC Berkeley，2025 秋 | 英文原版 | P1 主课 |
 | Retrieval Augmented Generation | [DeepLearning.AI](http://DeepLearning.AI)，Coursera | 英文原版 | P2 主课 |
 | AI Evals（FAQ + 邮件课 + Maven） | Hamel Husain、Shreya Shankar | 英文原版 | P3 |
 | CS336 Language Modeling from Scratch | Stanford，2026 春 | B 站中英字幕 | P4 主课 |
 
-**选书原则**：每个阶段只有一本「照着敲」的主线书，其余是参考。英文资料优先，因为 agent 方向的一手内容几乎都先以英文出现，中文书普遍滞后一到两年、代码框架已过时。中文原创书（张奇、郑天民、尹浩、杨威理）保留为**概念参考与理论补充**，不再作为动手教材；已有中文译本的英文书（AI Engineering、Hands-On LLMs、LLM Engineer's Handbook、LlamaIndex）可以直接读中文版。
+**选书原则**：每个阶段只有一本「照着敲」的主线书，其余是参考。英文资料优先，因为 agent 方向的一手内容几乎都先以英文出现，中文书普遍滞后一到两年、代码框架已过时。中文原创书（张奇、郑天民、尹浩、杨威理）保留为**概念参考与理论补充**，不再作为动手教材；已有中文译本的英文书（AI Engineering、Hands-On LLMs、LLM Engineer's Handbook、LlamaIndex）可以直接读中文版。课程方面，Microsoft《[AI Agents for Beginners](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/README.md)》是少数自带中文版、且仍在更新的 agent 课，18 课按主题拆进 P0–P4，**当中文概念主读**；它的示例绑定 Azure，代码一律用自己的栈重写。
 
 ---
 
 # P0 · Agent 地基：把 LLM 调用写成工程（4–5 周）
 
 **这个阶段是什么**：唯一一个不作为求职节点的阶段。你已经会调多个 LLM、会设计 prompt，但那是研究脚本；这里把它改造成有类型、有重试、有成本账、能被别人调用的工程代码。四周内不追求复杂架构，只追求「一个带三个真实工具的 agent，能跑、能测、能部署」。
-
 能力配比：`Agent 70%` · `LLM 20%` · `工程 10%`
 
 ## 掌握的知识 / 技能
@@ -147,12 +147,13 @@
 
 ## 教材
 
-- **\~\~中文书**：《~~\[~~AI Agent开发实战：从基础原理到企业级应用~~\](~~[~~https://weread.qq.com/web/reader/41232030813abb05bg019c0c)\</span\>~~](https://weread.qq.com/web/reader/41232030813abb05bg019c0c)\</span\>)》郑天民，机械工业出版社 2025-09（智能系统与技术丛书，ISBN 9787111788737），第 1–2 章：Agent 核心概念、开发模式、用 LLM 与 Swarm 框架搭第一个 agent\~\~
+- ~~**中文书**：《[AI Agent开发实战：从基础原理到企业级应用](https://weread.qq.com/web/reader/41232030813abb05bg019c0c)》郑天民，机械工业出版社 2025-09（智能系统与技术丛书，ISBN 9787111788737），第 1–2 章：Agent 核心概念、开发模式、用 LLM 与 Swarm 框架搭第一个 agent~~
     - [x] 第1章 AI Agent开发模式
     - [x] 第2章 LLM和Agent
 - **动手主线**：《[AI Agents: The Definitive Guide — Design, Deployment, and Evaluation for Production](https://github.com/miracle-huang/Learn-Agentic-AI-LLM/tree/main/ai-agents-the-definitive-guide)》Nicole Koenigstein，O'Reilly（ISBN 9798341666931）。**本阶段真正照着敲的那本**：从设计到部署到评估，跟着配套 GitHub 代码走一遍。英文，但框架是当前在用的。O'Reilly 2026-09 第一版，全书 12 章、无附录。**P0 先读第 1–2 章，其余随 P1 展开。**中文：暂无中文版。
     - [对应GitHub代码](https://github.com/Nicolepcx/ai-agents-the-definitive-guide)
     - [x] 第 1 章 From LLMs to Agents: The Foundational Blueprint（从 LLM 到 Agent：用有限与分层状态机打控制流的地基）
+        - [第一章笔记](ai-agents-the-definitive-guide/CH01/README.md)
     - [ ] 第 2 章 Architectures and Patterns: Planning, Reactivity, and Multi-Agent Systems（架构与模式：结构化推理、反思、human-in-the-loop、分层与群体）
     - [ ] 第 3 章 Advanced Planning, Reasoning, and Scalable Execution in Agents（进阶规划与推理：奖励、相对/绝对评估、强化学习、测试时计算、搜索与自适应 MCTS）
     - [ ] 第 4 章 Models Behind the Agents: Capabilities and Optimization（agent 背后的模型：decoder-only / encoder-only / MoE / 推理模型，开源与闭源、adapter、量化）
@@ -177,6 +178,11 @@
 - **课程**：[Hugging Face AI Agents Course](https://huggingface.co/learn/agents-course) Unit 0–1（免费）：Agent 概念与工具调用。中文：无，英文原版。
     - [ ] Unit 0 **Welcome to the 🤗 AI Agents Course**
     - [ ] Unit 1 **Introduction to Agents**
+- **中文课程**：[Microsoft · AI Agents for Beginners](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/README.md)（GitHub 开源，18 课）第 01–04 课。每课一篇 README + 一段短视频 + Python 示例，单课估计 1–2 小时。**与 HF Unit 0–1 内容重叠，二选一即可——想用中文建立概念就选这个。**注意：示例代码默认跑在 Microsoft Foundry（需要 Azure 订阅；GitHub Models 路径已被课程标为弃用），所以**不照跑，而是把每课示例的核心逻辑用自己的 `agent-kit` 重写一遍**。中文：仓库自带简中版（AI 机器翻译，有出入以英文原版为准）；视频为英文。
+    - [ ] [01 AI 代理及应用案例介绍](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/01-intro-to-ai-agents/README.md)
+    - [ ] [02 探索 AI 代理框架](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/02-explore-agentic-frameworks/README.md)
+    - [ ] [03 AI 代理设计模式](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/03-agentic-design-patterns/README.md)
+    - [ ] [04 工具使用设计模式](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/04-tool-use/README.md)
 - **白皮书**：[Agent Tools & Interoperability with MCP](https://www.kaggle.com/whitepaper-agent-tools-and-interoperability-with-mcp)
     - [x] 中文翻译：
 
@@ -195,7 +201,6 @@
 # P1 · 能交付的 Agent：编排、安全、可观测（8–10 周）
 
 **这个阶段是什么**：从「能跑的 demo」到「敢交付的 agent」。差别全在三件事上——出错怎么恢复、被恶意输入怎么办、坏了怎么定位。这一阶段做完，你就具备了中国「Agent 工程」赛道和日本「AI Agent 開発」岗位的入门交付能力。
-
 能力配比：`Agent 80%` · `LLM 15%` · `工程 5%`
 
 ## 掌握的知识 / 技能
@@ -224,6 +229,15 @@
     - 《AI Agent应用开发：构建多智能体协同系统》尹浩，清华大学出版社 2025-11 — 第 6 章**规划能力**（CoT、Self-Ask、Self-Reflexion、Function Calling、ReAct、Plan-and-Execute、Self-Discover 逐个实现）、第 7 章**多智能体**（AutoGen、MetaGPT、CrewAI、LangGraph 对比）。中文里对编排模式讲得最全的一本。
     - 《MCP开发从入门到实战》杨威理，人民邮电出版社 2025-06 — MCP 架构与五大要素（resources / prompts / tools / sampling / roots）、SDK、自己写 server、MCP Inspector 调试。（另有《MCP极简开发》王双等，人邮 2025-06，偏应用场景，可选。）
 - **课程**：[HF Agents Course](https://huggingface.co/learn/agents-course) Unit 2（三个框架各一遍）与 **Unit 4 期末项目（必做，带自动评测和排行榜，是你第一个客观分数）**
+- **中文课程**：[Microsoft · AI Agents for Beginners](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/README.md) 第 06–09、11、14、18 课；15 可选。重点三课：**11（协议）**直接对应你要写的 MCP server，顺带认识 A2A；**06 + 18（可信与安全）**和 AI Agent Security 那场互相印证，读完把其中的威胁类型并进你的回归测试集；**14（MAF）**是 Azure 侧的 agent 框架，日本求人里云平台是加分项，了解即可，不必深入（该课示例可识别 OpenAI 兼容的 MiniMax 端点，不一定要开 Azure）。
+    - [ ] [06 构建可信赖的代理](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/06-building-trustworthy-agents/README.md)
+    - [ ] [07 规划设计模式](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/07-planning-design/README.md)
+    - [ ] [08 多代理设计模式](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/08-multi-agent/README.md)
+    - [ ] [09 元认知设计模式](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/09-metacognition/README.md)
+    - [ ] 【重点】[11 代理协议：MCP、A2A、NLWeb](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/11-agentic-protocols/README.md)
+    - [ ] [14 Microsoft Agent Framework](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/14-microsoft-agent-framework/README.md)
+    - [ ] 【重点】[18 保障 AI 代理安全](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/18-securing-ai-agents/README.md)
+    - [ ] 【可选】[15 构建计算机使用代理（CUA）](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/15-browser-use/README.md)
 - **视频**：[DeepLearning.AI](http://DeepLearning.AI) [AI Agents in LangGraph](https://www.deeplearning.ai/courses/ai-agents-in-langgraph)、[Building Code Agents with smolagents](https://www.deeplearning.ai/courses/building-code-agents-with-hugging-face-smolagents)
 - **文档**：LangGraph、smolagents、MCP 的官方文档是这一阶段的唯一 API 依据。**概念看书，API 看官方文档**——框架版本变得比任何书都快，这也是中文书只当概念参考的原因。
 
@@ -249,7 +263,6 @@
 # P2 · RAG 与记忆：agent 的知识侧（8–10 周）
 
 **这个阶段是什么**：补上 agent 的另一半——知识。这也是两地**岗位数量最大**的方向：中国的「RAG & 记忆」赛道，日本几乎每家公司都在做的「社内 QA / 社内文書検索」。日本招聘明确点名 LangChain / LlamaIndex + 向量库，指的主要就是这块活。做法上要按 **Agentic RAG** 来做（检索是 agent 的一个工具，而不是一条固定流水线），这样 P1 的成果直接复用。
-
 能力配比：`Agent 45%` · `LLM 45%` · `工程 10%`
 
 ## 掌握的知识 / 技能
@@ -280,6 +293,10 @@
 - **照着敲**：**Building Data-Driven Applications with LlamaIndex** — Andrei Gheorghiu，Packt 2024。文档与节点、各类索引、检索与后处理、响应合成、agent 与部署，**日本求人票点名的就是 LlamaIndex**。中文：《LlamaIndex大模型RAG开发实践》杨森等 译，清华大学出版社 2025-07（ISBN 9787302697084）。
 - **视频主课**：[DeepLearning.AI · Retrieval Augmented Generation](https://www.deeplearning.ai/courses/retrieval-augmented-generation)（Coursera）— Coursera 上的完整课程（不是 1 小时短课），从检索、向量库讲到评测与生产化。中文：未找到可靠中文字幕版，英文原版。
 - **课程**：[HF Agents Course](https://huggingface.co/learn/agents-course) Unit 3：Agentic RAG——正好是本阶段要的「检索作为工具」的范式。
+- **中文课程**：[Microsoft · AI Agents for Beginners](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/README.md) 第 05、12、13 课。05 与 HF Unit 3 同一范式，实作二选一；**12（上下文工程）和 13（记忆）是本阶段的中文补位**——记忆的写入、检索与遗忘在中文资料里很少讲透，这两课正好覆盖。
+    - [ ] [05 代理检索增强生成（Agentic RAG）](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/05-agentic-rag/README.md)
+    - [ ] [12 AI 代理的上下文工程](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/12-context-engineering/README.md)
+    - [ ] [13 管理代理记忆](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/13-agent-memory/README.md)
 - **文档**：LlamaIndex 官方文档的 indexing / retrieval / evaluation 三章要通读。日本求人里点名它，不是随便点的。
 - **中文原创**：尹浩《AI Agent应用开发》第 5 章记忆模块（MemGPT / Mem0 / BoT），可选，用来补中文的记忆概念。
 
@@ -304,7 +321,6 @@
 # P3 · 评测与 LLMOps：把「能跑」变成「能证明」（6–8 周）
 
 **这个阶段是什么**：你的护城河，也是你研究背景变现的地方。日本招聘方明确写出「能设计评测框架、把运维做扎实的人被优先录用」；中国的岗位口径也从 demo 转向「可评测、能降本、能维护」。而你做的正是「不用真标签、从 LLM 行为本身估计任务可推断性」——这套方法论换个包装就是 agent/LLM 系统的难度分层与风险预估。这个阶段短，但性价比最高。
-
 能力配比：`Agent 40%` · `LLM 40%` · `工程 20%`
 
 ## 掌握的知识 / 技能
@@ -332,6 +348,9 @@
 - **评测专书**：[Evals for AI Engineers](https://www.oreilly.com/library/view/evals-for-ai/9798341660717/) — Shreya Shankar、Hamel Husain，O'Reilly，2026-10 出版。两位作者的 [AI Evals 课程](https://maven.com/parlance-labs/evals)是目前最受欢迎的评测课。书出之前先用他们的免费资料：[AI Evals FAQ](https://hamel.dev/blog/posts/evals-faq/) 与[免费邮件课程](https://ai.hamel.dev/eval-course)——错误分析、LLM-as-judge 校准、从 trace 里找失败模式，全是本阶段要的东西。中文：暂无中文版。
 - **论文**：[SkillsBench 论文](https://www.skillsbench.ai/skillsbench.pdf)（87 任务 / 8 领域 / 三层拆解：skill、harness、model）。当作「一份评测基准该怎么设计」的范本精读——这是你写自己基准的模板。
 - **工具**：[kaggle-benchmarks SDK](https://github.com/Kaggle/kaggle-benchmarks) 文档 + Benchmarks Cookbook。本阶段的主要动手工具。
+- **中文课程**：[Microsoft · AI Agents for Beginners](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/README.md) 第 10、16 课。**10 几乎就是本阶段的提纲**：trace 与 span、OpenTelemetry、延迟 / 单次成本 / 错误率 / 用户反馈等指标、离线与在线评估互补、线上失败回流成测试集、用小模型路由和缓存控成本。**16** 把离线评估当作发布门禁、按复杂度路由模型、把 MCP server 当作不可信依赖，并附一个带评估流水线与 GitHub Action 冒烟测试的完整客服 agent——当作 `agent-eval` 接入 CI 的参考实现来读，代码换成自己的栈重写。
+    - [ ] [10 生产环境中的 AI 代理](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/10-ai-agents-production/README.md)
+    - [ ] [16 部署可扩展代理](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/16-deploying-scalable-agents/README.md)
 - **中文原创**：张奇、郑锐《大规模语言模型（第2版）：从理论到实践》（电子工业 2025-05）的模型评估部分；尹浩《AI Agent应用开发》第 2 章的 OpenCompass 实操。作为中文理论补充。
 
 ## 阶段产出
@@ -356,7 +375,6 @@
 # P4 · LLM 工程：微调、量化与推理优化（10–12 周）
 
 **这个阶段是什么**：正式跨到 LLM Engineer。从「用模型」到「改模型，并让它更便宜更快」。这一段唯一需要真金白银租卡，所以放在后面——前三个阶段你已经能就业了，这里是加薪与拓宽的阶段。核心是两条能力线：微调（能造出一个自己的模型）与推理优化（能把它跑得起）。
-
 能力配比：`LLM 75%` · `Agent 15%` · `工程 10%`
 
 ## 掌握的知识 / 技能
@@ -387,6 +405,8 @@
 - **主参考书**：**AI Engineering**（Chip Huyen）第 7 章微调、第 8 章数据工程、第 9 章推理优化——讲「什么时候该微调、怎么让它便宜」的取舍，正好补上面几本偏动手的空缺。中文：《AI工程：大模型应用开发实战》宝玉 译，人民邮电出版社 2026-02。
 - **视频主课**：[Stanford CS336 · Language Modeling from Scratch](https://www.youtube.com/playlist?list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV)（2026 春）— 从 tokenizer、架构、GPU 与并行、scaling 到对齐，全部自己手写。目前公认最硬的 LLM 工程课，作业量大，挑 tokenizer / 架构 / 推理优化相关的讲次看即可。中文：[B 站 2026 版中英字幕（完结）](https://www.bilibili.com/video/BV1xDMG6KETb/)。
 - **视频**：Karpathy「Let's build GPT」与 Zero to Hero 系列（代码即讲解）；李宏毅《生成式人工智慧導論》的训练与后训练讲次（中文原生）。
+- **中文课程**：[Microsoft · AI Agents for Beginners](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/README.md) 第 17 课：小模型适合的边界任务（分类、抽取、选工具）、Foundry Local 的 OpenAI 兼容本地端点、Qwen 的 function calling、本地 RAG + MCP + 沙箱，以及**按敏感度和难度在本地 / 云端之间路由**。和本阶段「把高频子任务换成自有小模型」直接对应，路由那一节可以搬进旗舰项目 3。
+    - [ ] [17 创建本地 AI 代理](https://github.com/microsoft/ai-agents-for-beginners/blob/main/translations/zh-CN/17-creating-local-ai-agents/README.md)
 - **中文原创**：张奇、郑锐《大规模语言模型（第2版）》（电子工业 2025-05）的微调、对齐与推理加速部分，作为中文理论补充。
 - **文档**：vLLM 官方文档的 performance 与 scheduling 两章；HF PEFT / TRL 文档
 
@@ -412,7 +432,6 @@
 # P5 · 综合、冲牌与作品集收口（6–8 周）
 
 **这个阶段是什么**：把前四个节点合成一个系统（agent 编排 + RAG 知识 + 自有模型 + 评测闭环），同时在正式比赛里换一个客观名次。到这里你的简历已经不缺项目，缺的是「一个能讲 40 分钟的完整系统」和「一个外部背书的排名」。
-
 能力配比：`Agent 40%` · `LLM 40%` · `工程 20%`
 
 ## 掌握的知识 / 技能
@@ -557,12 +576,15 @@ P4 需要租卡，但可控：先用 0.5B–1.5B 小模型 + 几百条样本把�
 # 这条路线会在哪里断
 
 > **Agent 类比赛本来就少，且多为 Hackathon / Simulations 形态。** 这意味着「用 Kaggle 排名证明 agent 能力」这条路本身较窄。应对方式已经写进路线：主要产出物是**旗舰项目 + 公开基准 + writeup**，Kaggle 在这里的角色是提供真实基准与对照解法（尤其 AI Agent Security、Skill Lift、AgentEval 三场），奖牌集中放在 P5 去拿。不要因为找不到 agent 比赛就退回去打表格赛。
+
 > **框架版本变化快于书籍。** LangChain / LangGraph / LlamaIndex 的 API 每几个月就动一次，中文书和 B 站课程一定会滞后。规则：**概念看书，API 看官方文档**。书里的项目照做但用当前版本重写，这本身就是一次有价值的练习。
+
 > **时间被研究挤掉。** 真冲突时的取舍顺序：论文 \> 当前阶段主线项目 \> 写作 \> 读书。研究与路线能合并的点在 **P3**（评测框架 + Kaggle Benchmarks）——尽量让一份工作算两次。
+
 > **demo 病。** Agent 方向最容易做出十个漂亮 demo、零个能上线的东西，而两地招聘方都明确说不看 demo 看交付证据。硬规则：**一个阶段只许有一个旗舰项目**，宁可窄，也要有成功率、延迟、成本三个数字。
 
 ---
 
 > 页内比赛链接在编写时已逐条确认可达；**开放状态、截止日与奖牌线以 Kaggle 页面为准**。已知时点：ARC Prize 2026 赛期 2026-03-25 → 11-02；Gemma 4 Good Hackathon 最终提交 2026-05-18（已结束）；AIMO Progress Prize 3 于 2026-04 结束；AI Agent Security - Multi-Step Tool Attacks 于 2026 年中开赛。市场数据引自 2026 年 9 月的公开招聘分析，仅作方向参考。
 >
-> v2.4（Agent 优先）。本次调整：全部教材与视频改为英文优先、中文版随附——新增 *AI Engineering*（P2–P4 共用）、*Agentic Design Patterns*、*Building Applications with AI Agents*、*Hands-On RAG for Production*、*Evals for AI Engineers*、*LLM Engineer's Handbook*、*Build a Reasoning Model*；视频新增吴恩达《Agentic AI》、Karpathy、Berkeley Agentic AI MOOC、[DeepLearning.AI](http://DeepLearning.AI) RAG、Stanford CS336；中文原创书降为概念参考。每个阶段结束时回来改一次——尤其「可实践的 Kaggle 项目」一栏，它会过期。
+> v2.5：新增 Microsoft《AI Agents for Beginners》，18 课按主题拆进各阶段（P0：01–04；P1：06–09、11、14、18，15 可选；P2：05、12、13；P3：10、16；P4：17），作为中文概念主读，示例代码用自己的栈重写。v2.4（Agent 优先）。本次调整：全部教材与视频改为英文优先、中文版随附——新增 *AI Engineering*（P2–P4 共用）、*Agentic Design Patterns*、*Building Applications with AI Agents*、*Hands-On RAG for Production*、*Evals for AI Engineers*、*LLM Engineer's Handbook*、*Build a Reasoning Model*；视频新增吴恩达《Agentic AI》、Karpathy、Berkeley Agentic AI MOOC、[DeepLearning.AI](http://DeepLearning.AI) RAG、Stanford CS336；中文原创书降为概念参考。每个阶段结束时回来改一次——尤其「可实践的 Kaggle 项目」一栏，它会过期。
